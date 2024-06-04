@@ -110,6 +110,8 @@ with open('youtube_vid_comments_info.csv', 'r') as file:
     cur.copy_expert(sql, file)
 
 conn.commit()
+conn.commit()
+
 
 cur.close()
 conn.close()
