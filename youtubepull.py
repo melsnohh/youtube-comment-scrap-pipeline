@@ -102,12 +102,12 @@ cur.execute(
 )
 
 
-with open('youtube_vid_comments_info.csv', 'r') as f:
+with open('youtube_vid_comments_info.csv', 'r') as file:
     # Notice that we don't need the csv module.
     # next(f)  # Skip the header row.
     # cur.copy_from(f, "book", sep=',')
     sql = "COPY youtube_vid_info FROM STDIN DELIMITER ',' CSV HEADER"
-    cur.copy_expert(sql, f)
+    cur.copy_expert(sql, file)
 
 conn.commit()
 
