@@ -17,8 +17,11 @@ chrome_options.add_experimental_option("detach", True)
 chrome_options.add_argument("headless")
 chrome_options.add_argument("window-size=1920x1080")
 
-website = "https://www.youtube.com/watch?v=RZNQyC33J8U"
-path = '/Users/msnoh/Downloads/chromedriver-mac-arm64/chromedriver'
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+
+website = "https://www.youtube.com/watch?v=PQrekQOY-VY"
+path = os.getenv('chromedriver_path')
 s = Service(path)
 
 driver = webdriver.Chrome(service=s, options=chrome_options)
@@ -76,8 +79,6 @@ df = pd.DataFrame({
 
 df['current_date'] = pd.to_datetime(df['current_date']).dt.strftime('%m/%d/%Y')
 
-dotenv_path = find_dotenv()
-load_dotenv(dotenv_path)
 
 df.to_csv('youtube_vid_comments_info.csv', index=False)
 
