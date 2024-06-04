@@ -111,6 +111,8 @@ with open('youtube_vid_comments_info.csv', 'r') as file:
 
 conn.commit()
 conn.commit()
+conn.commit()
+
 
 
 cur.close()

@@ -1,5 +1,3 @@
-# created by virtualenv automatically
-.venv/bin
-.env
-pix.env
-mevv.env
+*.env
+/.venv
+youtube_vid_comments_info.csv
